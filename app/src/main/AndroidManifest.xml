@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MatchInfo"
+            android:label="@string/title_activity_teleop" >
+        </activity>
+        <activity
+            android:name=".Auton"
+            android:label="@string/title_activity_teleop" >
+        </activity>
+        <activity
+            android:name=".Teleop"
+            android:label="@string/title_activity_teleop" >
+        </activity>
     </application>
 
 </manifest>

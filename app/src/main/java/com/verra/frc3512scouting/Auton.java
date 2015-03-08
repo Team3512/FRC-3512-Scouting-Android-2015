@@ -16,6 +16,8 @@ public class Auton extends ActionBarActivity {
     String teamNumber;
 
     String yellowStacked;
+    String binsMoved;
+    String binsMovedFromStep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,8 @@ public class Auton extends ActionBarActivity {
         setContentView(R.layout.activity_auton);
 
         yellowStacked = "0";
+        binsMoved = "0";
+        binsMovedFromStep = "0";
 
         Intent intent = getIntent();
         matchNumber = intent.getStringExtra("matchNumber");
@@ -69,17 +73,40 @@ public class Auton extends ActionBarActivity {
 
     public void onBinsMovedRadioClicked(View view)
     {
+        RadioButton button = (RadioButton)view;
+        boolean checked = button.isChecked();
+        if(checked)
+        {
+            binsMoved = button.getText().toString();
+
+        }
 
     }
 
     public void onBinsMovedFromStepRadioClicked(View view)
     {
+        RadioButton button = (RadioButton)view;
+        boolean checked = button.isChecked();
+        if(checked)
+        {
+            binsMovedFromStep = button.getText().toString();
 
+        }
 
     }
 
     public void onNextClicked(View view)
     {
+        Intent intent = new Intent(this, Auton.class);
+
+        intent.putExtra("matchNumber", matchNumber);
+        intent.putExtra("teamNumber", teamNumber);
+
+        intent.putExtra("yellowStacked", yellowStacked);
+        intent.putExtra("binsMoved", binsMoved);
+        intent.putExtra("binsMovedFromStep", binsMovedFromStep);
+
+        startActivity(intent);
 
     }
 
