@@ -19,11 +19,14 @@ import java.util.Vector;
 
 public class DataHandler {
     private String m_submitURL;
+    private Vector<HashMap<String, Object>> m_storedData;
     private Context m_ctx;
 
     public DataHandler(Context ctx, String submitURL) {
         m_ctx = ctx;
         setSubmitURL(submitURL);
+
+        m_storedData = decodeData(readStorageText());
     }
 
     public void setSubmitURL(String submitURL) {
@@ -31,20 +34,27 @@ public class DataHandler {
     }
 
     public boolean storeData(HashMap<String, Object> data) {
-        // Get existing data
-        String storedDataString = readStorageText();
-        Vector<HashMap<String, Object>> storedDataVector = decodeData(storedDataString);
-
         // Tack on the new data
-        storedDataVector.add(data);
+        m_storedData.add(data);
 
         // JSONify everything
-        String storeDataString = encodeData(storedDataVector);
+        return writeArrayData();
+    }
+
+    public int countRows() {
+        return m_storedData.size();
+    }
+
+    public boolean clearData() {
+        m_storedData = new Vector<>();
+        return writeArrayData();
+    }
+
+    private boolean writeArrayData() {
+        String storeDataString = encodeData(m_storedData);
         if(storeDataString == null) {
             return false;
         }
-
-        // Store it to a file
         return writeStorageText(storeDataString);
     }
 
