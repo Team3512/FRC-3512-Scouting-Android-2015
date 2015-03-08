@@ -1,24 +1,28 @@
 package com.verra.frc3512scouting;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MatchInfo extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_match_info);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_match_info, menu);
         return true;
     }
 
@@ -32,8 +36,26 @@ public class MainActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onNextClicked(View view)
+    {
+        String matchNumber = ((EditText)findViewById(R.id.match_number_edit)).getText().toString();
+        String teamNumber = ((EditText)findViewById(R.id.team_number_edit)).getText().toString();
+        if(matchNumber.equals("") || teamNumber.equals(""))
+        {
+            Toast.makeText(this, "Fill out all fields before continuing", Toast.LENGTH_SHORT).show();
+
+        }
+
+        Intent intent = new Intent(this, Auton.class);
+        intent.putExtra("matchNumber", matchNumber);
+        intent.putExtra("teamNumber", teamNumber);
+        startActivity(intent);
+
     }
 }
