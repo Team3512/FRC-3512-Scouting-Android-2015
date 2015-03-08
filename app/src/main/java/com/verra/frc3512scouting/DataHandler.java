@@ -6,18 +6,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileInputStream;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Vector;
 
-/**
- * Created by acf on 3/8/15.
- */
 public class DataHandler {
     private String m_submitURL;
     private Context m_ctx;
@@ -46,28 +45,25 @@ public class DataHandler {
         }
 
         // Store it to a file
-        if(!writeStorageText(storeDataString)) {
-            return false;
-        }
-
-        return true;
+        return writeStorageText(storeDataString);
     }
 
     private String readStorageText() {
-        String text;
 
-        // Open the file
-        FileInputStream fos;
         try {
-            fos = m_ctx.openFileInput("FRCScoutingData.txt");
-        } catch (FileNotFoundException e) {
+            InputStream in = m_ctx.openFileInput("FRCScoutingData.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            StringBuilder out = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                out.append(line);
+            }
+            reader.close();
+            return out.toString();
+
+        } catch (IOException e) {
             return "";
         }
-
-        // TODO: Finish implementing this
-        //fos.read
-
-        return "";
     }
 
     private boolean writeStorageText(String storeDataString) {
@@ -81,7 +77,7 @@ public class DataHandler {
 
         // Write to the file
         try {
-            fos.write(storeDataString.getBytes());
+            fos.write(storeDataString.getBytes("UTF-8"));
             fos.close();
         } catch (IOException e) {
             return false;
@@ -99,7 +95,7 @@ public class DataHandler {
             jsonarr = new JSONArray(storedDataString);
         } catch (JSONException e) {
             // Return an empty vector if parsing failed
-            return new Vector<HashMap<String, Object>>();
+            return new Vector<>();
         }
 
         // Decode the magic number
@@ -108,34 +104,34 @@ public class DataHandler {
             magic = jsonarr.getString(0);
         } catch (JSONException e) {
             // Return an empty vector if parsing failed
-            return new Vector<HashMap<String, Object>>();
+            return new Vector<>();
         }
 
         // Check the magic number
         if(!magic.equals("magic v0.1")) {
             // Return an empty vector if the magic number was wrong
-            return new Vector<HashMap<String, Object>>();
+            return new Vector<>();
         }
 
         // Everything else should be a map
-        Vector<HashMap<String, Object>> data = new Vector<HashMap<String, Object>>();
+        Vector<HashMap<String, Object>> data = new Vector<>();
         for(int i = 0; i < jsonarr.length(); i++) {
             JSONObject obj;
             try {
                 obj = jsonarr.getJSONObject(i);
             } catch (JSONException e) {
                 // Return an empty vector if parsing failed
-                return new Vector<HashMap<String, Object>>();
+                return new Vector<>();
             }
 
-            HashMap<String, Object> hashmap = new HashMap<String, Object>();
+            HashMap<String, Object> hashmap = new HashMap<>();
             for(Iterator<String> it = obj.keys(); it.hasNext();) {
                 String key =  it.next();
                 try {
                     hashmap.put(key, obj.get(key));
                 } catch (JSONException e) {
                     // I don't think this can happen ..
-                    return new Vector<HashMap<String, Object>>();
+                    return new Vector<>();
                 }
             }
             data.add(hashmap);
@@ -149,13 +145,10 @@ public class DataHandler {
 
         arr.put("magic v0.1");
 
-        for(Iterator<HashMap<String, Object>> it = storedDataVector.iterator(); it.hasNext();) {
-            HashMap<String, Object> hashmap = it.next();
+        for (HashMap<String, Object> hashmap : storedDataVector) {
             JSONObject jsonobj = new JSONObject();
 
-            for(Iterator<Map.Entry<String, Object>> mit = hashmap.entrySet().iterator();
-                mit.hasNext();) {
-                Map.Entry<String, Object> entry = mit.next();
+            for (Map.Entry<String, Object> entry : hashmap.entrySet()) {
                 try {
                     jsonobj.put(entry.getKey(), entry.getValue());
                 } catch (JSONException e) {
