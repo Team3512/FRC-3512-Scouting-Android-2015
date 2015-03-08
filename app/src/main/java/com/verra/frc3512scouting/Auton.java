@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -19,6 +20,9 @@ public class Auton extends ActionBarActivity {
     String binsMoved;
     String binsMovedFromStep;
 
+    boolean fullyAutonZone;
+    boolean toteSet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +32,11 @@ public class Auton extends ActionBarActivity {
         binsMoved = "0";
         binsMovedFromStep = "0";
 
+        fullyAutonZone = false;
+        toteSet = false;
+
         Intent intent = getIntent();
+
         matchNumber = intent.getStringExtra("matchNumber");
         teamNumber = intent.getStringExtra("teamNumber");
 
@@ -61,6 +69,9 @@ public class Auton extends ActionBarActivity {
 
     public void onYellowToteRadioClicked(View view)
     {
+        if(!(view instanceof RadioButton))
+            return;
+
         RadioButton button = (RadioButton)view;
         boolean checked = button.isChecked();
         if(checked)
@@ -73,6 +84,9 @@ public class Auton extends ActionBarActivity {
 
     public void onBinsMovedRadioClicked(View view)
     {
+        if(!(view instanceof RadioButton))
+            return;
+
         RadioButton button = (RadioButton)view;
         boolean checked = button.isChecked();
         if(checked)
@@ -85,6 +99,9 @@ public class Auton extends ActionBarActivity {
 
     public void onBinsMovedFromStepRadioClicked(View view)
     {
+        if(!(view instanceof RadioButton))
+            return;
+
         RadioButton button = (RadioButton)view;
         boolean checked = button.isChecked();
         if(checked)
@@ -97,7 +114,10 @@ public class Auton extends ActionBarActivity {
 
     public void onNextClicked(View view)
     {
-        Intent intent = new Intent(this, Auton.class);
+        fullyAutonZone = ((CheckBox)findViewById(R.id.auton_fully)).isChecked();
+        toteSet = ((CheckBox)findViewById(R.id.auton_stacked)).isChecked();
+
+        Intent intent = new Intent(this, Teleop.class);
 
         intent.putExtra("matchNumber", matchNumber);
         intent.putExtra("teamNumber", teamNumber);
@@ -105,6 +125,9 @@ public class Auton extends ActionBarActivity {
         intent.putExtra("yellowStacked", yellowStacked);
         intent.putExtra("binsMoved", binsMoved);
         intent.putExtra("binsMovedFromStep", binsMovedFromStep);
+
+        intent.putExtra("fullyAutonZone", fullyAutonZone);
+        intent.putExtra("toteSet", toteSet);
 
         startActivity(intent);
 

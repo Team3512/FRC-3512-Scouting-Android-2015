@@ -49,6 +49,7 @@ public class MatchInfo extends ActionBarActivity {
         if(matchNumber.equals("") || teamNumber.equals(""))
         {
             Toast.makeText(this, "Fill out all fields before continuing", Toast.LENGTH_SHORT).show();
+            return;
 
         }
 

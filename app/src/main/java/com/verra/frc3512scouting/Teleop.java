@@ -1,17 +1,46 @@
 package com.verra.frc3512scouting;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class Teleop extends ActionBarActivity {
+
+    String matchNumber;
+    String teamNumber;
+
+    String yellowStacked;
+    String binsMoved;
+    String binsMovedFromStep;
+
+    boolean fullyAutonZone;
+    boolean toteSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teleop);
+
+        Intent intent = getIntent();
+
+        matchNumber = intent.getStringExtra("matchNumber");
+        teamNumber = intent.getStringExtra("teamNumber");
+
+        yellowStacked = intent.getStringExtra("yellowStacked");
+        binsMoved = intent.getStringExtra("binsMoved");
+        binsMovedFromStep = intent.getStringExtra("binsMoveFromStep");
+
+        fullyAutonZone = intent.getBooleanExtra("fullyAutonZone", fullyAutonZone);
+        toteSet = intent.getBooleanExtra("toteSet", toteSet);
+
+        ((TextView)findViewById(R.id.teleop_header)).setText("Teleop - " + teamNumber);
+
+
     }
 
 
@@ -36,4 +65,15 @@ public class Teleop extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onTotesStepRadioClicked(View view)
+    {
+
+    }
+
+    public void onStackedTopRadioClicked(View view)
+    {
+
+    }
+
 }

@@ -35,27 +35,21 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="# of Yellow Totes in Auto Zone"
             android:id="@+id/textView6"
-            android:layout_gravity="center_horizontal" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.08">
+            android:layout_gravity="left" />
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
                     android:id="@+id/auton_tote_0"
                     android:checked="true"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -64,7 +58,7 @@
                     android:text="1"
                     android:id="@+id/auton_tote_1"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -73,7 +67,7 @@
                     android:text="2"
                     android:id="@+id/auton_tote_2"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -82,7 +76,7 @@
                     android:text="3"
                     android:id="@+id/auton_tote_3"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -91,11 +85,10 @@
                     android:text="4"
                     android:id="@+id/auton_tote_4"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
             </RadioGroup>
-        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -103,20 +96,13 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="# of Bins moved from Staging Area"
             android:id="@+id/textView7"
-            android:layout_gravity="center_horizontal" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.08" >
+            android:layout_gravity="left" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:onClick="onBinsMovedRadioClicked">
+                android:layout_gravity="center_horizontal">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -124,7 +110,7 @@
                     android:text="0"
                     android:id="@+id/auton_bin_0"
                     android:checked="true"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -133,7 +119,7 @@
                     android:text="1"
                     android:id="@+id/auton_bin_1"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -142,7 +128,7 @@
                     android:text="2"
                     android:id="@+id/auton_bin_2"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -151,7 +137,7 @@
                     android:text="3"
                     android:id="@+id/auton_bin_3"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -160,10 +146,9 @@
                     android:text="4"
                     android:id="@+id/auton_bin_4"
                     android:checked="false"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
             </RadioGroup>
-        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -171,7 +156,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="# of Bins moved from Step"
             android:id="@+id/textView8"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="left" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
@@ -185,7 +170,7 @@
                 android:text="0"
                 android:id="@+id/auton_step_0"
                 android:checked="true"
-                android:padding="15dp"
+                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -194,7 +179,7 @@
                 android:text="1"
                 android:id="@+id/auton_step_1"
                 android:checked="false"
-                android:padding="15dp"
+                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -203,7 +188,7 @@
                 android:text="2"
                 android:id="@+id/auton_step_2"
                 android:checked="false"
-                android:padding="15dp"
+                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -212,7 +197,7 @@
                 android:text="3"
                 android:id="@+id/auton_step_3"
                 android:checked="false"
-                android:padding="15dp"
+                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -221,7 +206,7 @@
                 android:text="4"
                 android:id="@+id/auton_step_4"
                 android:checked="false"
-                android:padding="15dp"
+                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
         </RadioGroup>
 
