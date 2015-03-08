@@ -1,19 +1,30 @@
 package com.verra.frc3512scouting;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(getHostLocation(this) == "")
+        {
+            setHostLocation(this, "http://scoutdb.frc3512.com/write");
+
+        }
     }
 
 
@@ -33,6 +44,28 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            final Context ctx = this;
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Host Location");
+            final EditText input = new EditText(this);
+            input.setText(getHostLocation(ctx));
+            input.setInputType(InputType.TYPE_TEXT_VARIATION_URI);
+            builder.setView(input);
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    setHostLocation(ctx, input.getText().toString());
+                }
+
+            });
+
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            builder.show();
             return true;
         }
 
@@ -48,6 +81,22 @@ public class MainActivity extends ActionBarActivity {
 
     public void onSubmitLocalDataClicked(View view)
     {
+
+    }
+
+    static public String getHostLocation(Context ctx)
+    {
+        SharedPreferences prefs = ctx.getSharedPreferences(MainActivity.class.getSimpleName(), Context.MODE_PRIVATE);
+        return prefs.getString("host_location", "");
+
+    }
+
+    static public void setHostLocation(Context ctx, String location)
+    {
+        SharedPreferences prefs = ctx.getSharedPreferences(MainActivity.class.getSimpleName(), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("host_location", location);
+        editor.commit();
 
     }
 

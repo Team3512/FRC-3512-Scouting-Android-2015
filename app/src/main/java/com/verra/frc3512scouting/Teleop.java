@@ -1,7 +1,7 @@
 package com.verra.frc3512scouting;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-public class Teleop extends ActionBarActivity {
+public class Teleop extends Activity {
 
     String matchNumber;
     String teamNumber;
