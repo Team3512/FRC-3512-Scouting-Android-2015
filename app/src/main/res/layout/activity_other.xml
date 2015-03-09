@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.verra.frc3512scouting.MatchInfo">
+    tools:context="com.verra.frc3512scouting.Other">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,70 +18,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Match Info"
-            android:id="@+id/textView2"
+            android:text="Other"
+            android:id="@+id/textView24"
             android:layout_gravity="center_horizontal" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.15" />
+            android:layout_weight="0.12" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Match #"
-            android:id="@+id/textView3"
-            android:layout_gravity="left" />
+            android:text="Notes"
+            android:id="@+id/textView25" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/match_number_edit"
-            android:layout_gravity="center_horizontal"
-            android:singleLine="true"
-            android:gravity="center_horizontal" />
+            android:id="@+id/note_edit"
+            android:layout_gravity="center_horizontal" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.08" />
+            android:layout_weight="0.12" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Team #"
-            android:id="@+id/textView4"
-            android:layout_gravity="left" />
+            android:text="Scouted by"
+            android:id="@+id/textView26" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="textPersonName"
+            android:text="Name"
             android:ems="10"
-            android:id="@+id/team_number_edit"
-            android:layout_gravity="center_horizontal"
-            android:singleLine="true"
-            android:gravity="center_horizontal" />
+            android:id="@+id/scout_name"
+            android:layout_gravity="center_horizontal" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.15" />
+            android:layout_weight="0.24" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
-            android:id="@+id/match_info_next"
+            android:text="Save"
+            android:id="@+id/save_button"
             android:layout_gravity="center_horizontal"
-            android:onClick="onNextClicked"/>
+            android:onClick="onSaveClicked"/>
     </LinearLayout>
 </RelativeLayout>

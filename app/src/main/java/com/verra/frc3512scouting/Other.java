@@ -3,22 +3,22 @@ package com.verra.frc3512scouting;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MatchInfo extends Activity {
+public class Other extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_match_info);
+        setContentView(R.layout.activity_other);
+
+        ((EditText)findViewById(R.id.scout_name)).setText(MainActivity.getScouterName(this));
 
     }
 
@@ -26,7 +26,7 @@ public class MatchInfo extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_match_info, menu);
+        getMenuInflater().inflate(R.menu.menu_other, menu);
         return true;
     }
 
@@ -40,27 +40,27 @@ public class MatchInfo extends Activity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void onNextClicked(View view)
+    public void onSaveClicked(View view)
     {
-        String matchNumber = ((EditText)findViewById(R.id.match_number_edit)).getText().toString();
-        String teamNumber = ((EditText)findViewById(R.id.team_number_edit)).getText().toString();
-        if(matchNumber.equals("") || teamNumber.equals(""))
+        String scoutName = ((EditText)findViewById(R.id.scout_name)).getText().toString();
+        if(scoutName.equals(""))
         {
-            Toast.makeText(this, "Fill out all fields before continuing", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill out your name", Toast.LENGTH_SHORT).show();
             return;
 
         }
 
-        Intent intent = new Intent(this, Auton.class);
-        intent.putExtra("matchNumber", matchNumber);
-        intent.putExtra("teamNumber", teamNumber);
+        MainActivity.setScouterName(this, scoutName);
+
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
 
     }
+
 }

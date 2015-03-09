@@ -69,9 +69,6 @@ public class Auton extends Activity {
 
     public void onYellowToteRadioClicked(View view)
     {
-        if(!(view instanceof RadioButton))
-            return;
-
         RadioButton button = (RadioButton)view;
         boolean checked = button.isChecked();
         if(checked)
@@ -84,9 +81,6 @@ public class Auton extends Activity {
 
     public void onBinsMovedRadioClicked(View view)
     {
-        if(!(view instanceof RadioButton))
-            return;
-
         RadioButton button = (RadioButton)view;
         boolean checked = button.isChecked();
         if(checked)
@@ -99,9 +93,6 @@ public class Auton extends Activity {
 
     public void onBinsMovedFromStepRadioClicked(View view)
     {
-        if(!(view instanceof RadioButton))
-            return;
-
         RadioButton button = (RadioButton)view;
         boolean checked = button.isChecked();
         if(checked)

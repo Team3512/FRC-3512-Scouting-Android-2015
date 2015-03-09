@@ -49,7 +49,6 @@
                     android:text="0"
                     android:id="@+id/auton_tote_0"
                     android:checked="true"
-                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -58,7 +57,6 @@
                     android:text="1"
                     android:id="@+id/auton_tote_1"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -67,7 +65,6 @@
                     android:text="2"
                     android:id="@+id/auton_tote_2"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -76,7 +73,6 @@
                     android:text="3"
                     android:id="@+id/auton_tote_3"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
@@ -85,7 +81,6 @@
                     android:text="4"
                     android:id="@+id/auton_tote_4"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onYellowToteRadioClicked"/>
 
             </RadioGroup>
@@ -110,7 +105,6 @@
                     android:text="0"
                     android:id="@+id/auton_bin_0"
                     android:checked="true"
-                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -119,7 +113,6 @@
                     android:text="1"
                     android:id="@+id/auton_bin_1"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -128,7 +121,6 @@
                     android:text="2"
                     android:id="@+id/auton_bin_2"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -137,7 +129,6 @@
                     android:text="3"
                     android:id="@+id/auton_bin_3"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
 
                 <RadioButton
@@ -146,7 +137,6 @@
                     android:text="4"
                     android:id="@+id/auton_bin_4"
                     android:checked="false"
-                    android:padding="12dp"
                     android:onClick="onBinsMovedRadioClicked"/>
             </RadioGroup>
 
@@ -170,7 +160,6 @@
                 android:text="0"
                 android:id="@+id/auton_step_0"
                 android:checked="true"
-                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -179,7 +168,6 @@
                 android:text="1"
                 android:id="@+id/auton_step_1"
                 android:checked="false"
-                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -188,7 +176,6 @@
                 android:text="2"
                 android:id="@+id/auton_step_2"
                 android:checked="false"
-                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -197,7 +184,6 @@
                 android:text="3"
                 android:id="@+id/auton_step_3"
                 android:checked="false"
-                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
@@ -206,7 +192,6 @@
                 android:text="4"
                 android:id="@+id/auton_step_4"
                 android:checked="false"
-                android:padding="12dp"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
         </RadioGroup>
 

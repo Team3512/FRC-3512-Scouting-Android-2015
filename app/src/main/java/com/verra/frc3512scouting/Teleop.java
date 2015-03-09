@@ -76,4 +76,26 @@ public class Teleop extends Activity {
 
     }
 
+    public void onFoulRadioClicked(View view)
+    {
+
+    }
+
+    public void onTippedRadioClicked(View view)
+    {
+
+    }
+
+    public void onCollectedRadioClicked(View view)
+    {
+
+    }
+
+    public void onNextClicked(View view)
+    {
+        Intent intent = new Intent(this, Other.class);
+        startActivity(intent);
+
+    }
+
 }

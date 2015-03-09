@@ -28,6 +28,10 @@
             android:name=".Teleop"
             android:label="Teleop" >
         </activity>
+        <activity
+            android:name=".Other"
+            android:label="@string/title_activity_other" >
+        </activity>
     </application>
 
 </manifest>

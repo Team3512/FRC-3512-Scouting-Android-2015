@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(getHostLocation(this) == "")
+        if(getHostLocation(this).equals(""))
         {
             setHostLocation(this, "http://scoutdb.frc3512.com/write");
 
@@ -96,6 +96,22 @@ public class MainActivity extends Activity {
         SharedPreferences prefs = ctx.getSharedPreferences(MainActivity.class.getSimpleName(), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("host_location", location);
+        editor.commit();
+
+    }
+
+    static public String getScouterName(Context ctx)
+    {
+        SharedPreferences prefs = ctx.getSharedPreferences(MainActivity.class.getSimpleName(), Context.MODE_PRIVATE);
+        return prefs.getString("scouter", "");
+
+    }
+
+    static public void setScouterName(Context ctx, String scouter)
+    {
+        SharedPreferences prefs = ctx.getSharedPreferences(MainActivity.class.getSimpleName(), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("scouter", scouter);
         editor.commit();
 
     }
