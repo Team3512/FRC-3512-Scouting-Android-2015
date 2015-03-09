@@ -15,73 +15,33 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Match Info"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.15" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Match #"
-            android:id="@+id/textView3"
-            android:layout_gravity="left" />
+            android:id="@+id/auton_header"
+            style="?android:attr/listSeparatorTextViewStyle" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/match_number_edit"
-            android:layout_gravity="center_horizontal"
             android:singleLine="true"
-            android:gravity="center_horizontal" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.08" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Team #"
-            android:id="@+id/textView4"
-            android:layout_gravity="left" />
+            android:hint="Match #" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/team_number_edit"
-            android:layout_gravity="center_horizontal"
             android:singleLine="true"
-            android:gravity="center_horizontal" />
+            android:hint="Team #" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.15" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:id="@+id/match_info_next"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onNextClicked"/>
     </LinearLayout>
 </RelativeLayout>

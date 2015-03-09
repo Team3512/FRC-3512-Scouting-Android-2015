@@ -16,18 +16,12 @@
         android:id="@+id/auton_linear_layout">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Autonomous"
             android:id="@+id/auton_header"
-            android:layout_gravity="center_horizontal" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.12" />
+            style="?android:attr/listSeparatorTextViewStyle" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,45 +33,50 @@
 
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="left">
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="0"
                     android:id="@+id/auton_tote_0"
                     android:checked="true"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="1"
                     android:id="@+id/auton_tote_1"
                     android:checked="false"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="2"
                     android:id="@+id/auton_tote_2"
                     android:checked="false"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="3"
                     android:id="@+id/auton_tote_3"
+                    android:layout_weight="1"
                     android:checked="false"
                     android:onClick="onYellowToteRadioClicked"/>
 
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="4"
                     android:id="@+id/auton_tote_4"
                     android:checked="false"

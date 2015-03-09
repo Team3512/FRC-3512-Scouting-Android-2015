@@ -37,7 +37,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Teleop - Coopertition"
                 android:id="@+id/textView5"
-                android:layout_gravity="center_horizontal" />
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:layout_gravity="left" />
 
             <Space
                 android:layout_width="match_parent"
