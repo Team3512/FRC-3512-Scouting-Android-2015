@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">FRC3512Scouting</string>
+    <string name="app_name">FIRST 3512 Scouting</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Set remote host</string>
     <string-array name="tote_spinner">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
