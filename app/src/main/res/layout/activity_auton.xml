@@ -18,6 +18,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Autonomous"
             android:id="@+id/auton_header"
@@ -26,168 +27,184 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="# of Yellow Totes in Auto Zone"
-            android:id="@+id/textView6"
+            android:id="@+id/totesAutoZoneLabel"
             android:layout_gravity="left" />
 
 
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_gravity="left">
+            <RadioButton
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="left">
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="0"
-                    android:id="@+id/auton_tote_0"
-                    android:checked="true"
-                    android:onClick="onYellowToteRadioClicked"/>
+                android:layout_weight="1"
+                android:text="0"
+                android:id="@+id/auton_tote_0"
+                android:checked="true"
+                android:onClick="onYellowToteRadioClicked"/>
 
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="1"
-                    android:id="@+id/auton_tote_1"
-                    android:checked="false"
-                    android:onClick="onYellowToteRadioClicked"/>
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"
+                android:id="@+id/auton_tote_1"
+                android:checked="false"
+                android:onClick="onYellowToteRadioClicked"/>
 
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="2"
-                    android:id="@+id/auton_tote_2"
-                    android:checked="false"
-                    android:onClick="onYellowToteRadioClicked"/>
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"
+                android:id="@+id/auton_tote_2"
+                android:checked="false"
+                android:onClick="onYellowToteRadioClicked"/>
 
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:id="@+id/auton_tote_3"
-                    android:layout_weight="1"
-                    android:checked="false"
-                    android:onClick="onYellowToteRadioClicked"/>
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:id="@+id/auton_tote_3"
+                android:layout_weight="1"
+                android:checked="false"
+                android:onClick="onYellowToteRadioClicked"/>
 
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="4"
-                    android:id="@+id/auton_tote_4"
-                    android:checked="false"
-                    android:onClick="onYellowToteRadioClicked"/>
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"
+                android:id="@+id/auton_tote_4"
+                android:checked="false"
+                android:onClick="onYellowToteRadioClicked"/>
 
-            </RadioGroup>
+        </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="# of Bins moved from Staging Area"
-            android:id="@+id/textView7"
-            android:layout_gravity="left" />
-
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:id="@+id/auton_bin_0"
-                    android:checked="true"
-                    android:onClick="onBinsMovedRadioClicked"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:id="@+id/auton_bin_1"
-                    android:checked="false"
-                    android:onClick="onBinsMovedRadioClicked"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2"
-                    android:id="@+id/auton_bin_2"
-                    android:checked="false"
-                    android:onClick="onBinsMovedRadioClicked"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3"
-                    android:id="@+id/auton_bin_3"
-                    android:checked="false"
-                    android:onClick="onBinsMovedRadioClicked"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4"
-                    android:id="@+id/auton_bin_4"
-                    android:checked="false"
-                    android:onClick="onBinsMovedRadioClicked"/>
-            </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="# of Bins moved from Step"
-            android:id="@+id/textView8"
+            android:id="@+id/binsStagingAreaLabel"
             android:layout_gravity="left" />
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal">
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:id="@+id/auton_bin_0"
+                android:checked="true"
+                android:onClick="onBinsMovedRadioClicked"/>
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"
+                android:id="@+id/auton_bin_1"
+                android:checked="false"
+                android:onClick="onBinsMovedRadioClicked"/>
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"
+                android:id="@+id/auton_bin_2"
+                android:checked="false"
+                android:onClick="onBinsMovedRadioClicked"/>
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"
+                android:id="@+id/auton_bin_3"
+                android:checked="false"
+                android:onClick="onBinsMovedRadioClicked"/>
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"
+                android:id="@+id/auton_bin_4"
+                android:checked="false"
+                android:onClick="onBinsMovedRadioClicked"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="# of Bins moved from Step"
+            android:id="@+id/binsMovedFromStepLabel"
+            android:layout_gravity="left" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="0"
                 android:id="@+id/auton_step_0"
                 android:checked="true"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="1"
                 android:id="@+id/auton_step_1"
                 android:checked="false"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="2"
                 android:id="@+id/auton_step_2"
                 android:checked="false"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="3"
                 android:id="@+id/auton_step_3"
                 android:checked="false"
                 android:onClick="onBinsMovedFromStepRadioClicked"/>
 
             <RadioButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="4"
                 android:id="@+id/auton_step_4"
                 android:checked="false"
@@ -209,20 +226,6 @@
             android:id="@+id/auton_stacked"
             android:checked="false"
             android:gravity="center|center_vertical" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.12" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:id="@+id/auton_next"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onNextClicked"/>
 
     </LinearLayout>
 </RelativeLayout>

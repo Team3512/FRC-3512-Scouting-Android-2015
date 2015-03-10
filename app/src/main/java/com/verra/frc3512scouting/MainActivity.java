@@ -7,6 +7,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,16 +17,23 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
+
+    ViewPager m_viewPager;
+    PagerAdapter m_pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        m_pagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        m_viewPager = (ViewPager) findViewById(R.id.pager);
+        m_viewPager.setAdapter(m_pagerAdapter);
+
         if(getHostLocation(this).equals(""))
         {
             setHostLocation(this, "http://scoutdb.frc3512.com/write");
-
         }
     }
 

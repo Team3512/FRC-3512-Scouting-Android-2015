@@ -9,28 +9,13 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MatchInfo"
-            android:label="MatchInfo" >
-        </activity>
-        <activity
-            android:name=".Auton"
-            android:label="Auton" >
-        </activity>
-        <activity
-            android:name=".Teleop"
-            android:label="Teleop" >
-        </activity>
-        <activity
-            android:name=".Other"
-            android:label="@string/title_activity_other" >
         </activity>
     </application>
 
