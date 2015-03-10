@@ -84,8 +84,6 @@ public class MainActivity extends ActionBarActivity {
 
     public void onNewMatchClicked(View view)
     {
-        Intent intent = new Intent(this, MatchInfo.class);
-        startActivity(intent);
 
     }
 
